@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ohgiraffers.model.mapper.BookMapper">
+
+    <select id="viewAllList" resultType="com.ohgiraffers.model.mapper.BookMapper">
+        SELECT
+            BOOK_CODE,
+            BOOK_NAME,
+            PUBLISHER,
+            RELEASE_DATE,
+            AMOUNT,
+            CATEGORY_CODE,
+            LOANABLE_YN
+        FROM
+            book_info
+        ORDER BY
+            BOOK_CODE
+    </select>
+
+    <select id="viewMemberList" resultType="com.ohgiraffers.model.mapper.BookMapper">
+        SELECT
+            MEMBER_CODE,
+            MEMBER_NAME,
+            JOIN_DATE,
+            LOAN_YN,
+            LOANED_BOOK
+        FROM
+            member_info
+        ORDER BY
+            MEMBER_CODE
+    </select>
+
+
+
+
+
+</mapper>
